@@ -425,8 +425,8 @@ void			e2dbg_breakpoint_process()
 	  sect   = elfsh_get_parent_section(parent, (eresi_Addr) *pc, NULL);
 	  name   = revm_resolve(parent, (eresi_Addr) *pc, &off);
 	  off = 0;
-	  sym    = elfsh_get_metasym_by_value(parent, (eresi_Addr) *pc, 
-					      &off, ELFSH_LOWSYM);
+	  sym    = elfsh_get_metasym_by_value(parent, (eresi_Addr) *pc,
+					      (int *)&off, ELFSH_LOWSYM);
 
 #if __DEBUG_BP__
 	  fprintf(stderr, 

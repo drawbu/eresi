@@ -36,7 +36,7 @@ int		cmd_argcount()
       if (addr == 0)
 	PROFILER_ERR(__FILE__, __FUNCTION__, __LINE__, 
 		     "Invalid function/address request", -1);
-      name = elfsh_reverse_metasym(world.curjob->curfile, addr, &off);
+      name = elfsh_reverse_metasym(world.curjob->curfile, addr, (elfsh_SAddr *)&off);
       if (!name)
 	name = "func-unresolved";
     }
